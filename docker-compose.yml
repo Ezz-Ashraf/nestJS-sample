@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    ports:
+      - 3001:5432
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD:trust
+      - POSTGRES_USER:postgres
+      - POSTGRES_PASSWORD:123
+      - POSTGRES_DB:nestsample
+    networks:
+      - ezzashraf
+networks:
+  ezzashraf:
