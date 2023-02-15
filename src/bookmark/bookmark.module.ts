@@ -1,4 +1,6 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
 @Module({})
-export class BookmarkModule {}
+export class BookmarkModule {
+  constructor() {}
+}

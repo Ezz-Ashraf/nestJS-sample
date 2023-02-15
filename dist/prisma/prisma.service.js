@@ -9,14 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BookmarkModule = void 0;
+exports.PrismaService = void 0;
 const common_1 = require("@nestjs/common");
-let BookmarkModule = class BookmarkModule {
-    constructor() { }
+const client_1 = require("@prisma/client");
+let PrismaService = class PrismaService extends client_1.PrismaClient {
+    constructor() {
+        super({
+            datasources: {
+                db: {
+                    url: "",
+                },
+            },
+        });
+    }
 };
-BookmarkModule = __decorate([
-    (0, common_1.Module)({}),
+PrismaService = __decorate([
+    (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [])
-], BookmarkModule);
-exports.BookmarkModule = BookmarkModule;
-//# sourceMappingURL=bookmark.module.js.map
+], PrismaService);
+exports.PrismaService = PrismaService;
+//# sourceMappingURL=prisma.service.js.map
